@@ -9,6 +9,9 @@ description: 网站再小，数据也是无价的，做好数据的备份工作�
 wordpress_id: 878
 categories:
 - linux
+tags:
+- mysql
+- dropbox
 ---
 
 

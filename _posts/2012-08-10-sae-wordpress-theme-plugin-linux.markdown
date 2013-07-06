@@ -44,8 +44,7 @@ windows传送门：[windows下SAE平台 WordPress主题、插件安装方法](ht
 SAE默认是没有给我们创建SVN 库的，所以我们需要自己动手点击一下。
 在代码管理里面点击创建SVN库。
 
-[![创建SVN库](http://gracece.net/blog/wp-content/uploads/2012/08/create.png)](http://gracece.net/blog/wp-content/uploads/2012/08/create.png)
-
+![创建SVN库](http://ww3.sinaimg.cn/large/50b560a5gw1e6dfum5zh5j20rc0ac0us.jpg)
 3、本地checkout
 打开终端，输入
 
@@ -71,13 +70,12 @@ checkout完后会在home目录中创建与应用同名的文件夹。
 
 等待上传完毕：
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/a.png)](http://gracece.net/blog/wp-content/uploads/2012/08/a.png)
-
+![upload done](http://ww4.sinaimg.cn/large/50b560a5gw1e6dfuxwnvqj20ex09gabw.jpg)
 
 5、在外观选项更换主题
 打开博客的控制面板，选择安装好的主题，应用即可。
 
-[![安装主题](http://gracece.net/blog/wp-content/uploads/2012/08/DeepinScreenshot-4552-300x280.png)](http://gracece.net/blog/wp-content/uploads/2012/08/DeepinScreenshot-4552.png)
+![安装主题](http://ww4.sinaimg.cn/large/50b560a5gw1e6dfw4xkkcj20gy0fv0uo.jpg)
 
 ## 安装插件
 

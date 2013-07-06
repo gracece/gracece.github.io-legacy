@@ -39,7 +39,7 @@ SAE默认是没有给我们创建SVN 库的，所以我们需要自己动手点�
 在代码管理里面点击创建SVN库。
 
 
-[![创建SVN库](http://gracece.net/blog/wp-content/uploads/2012/08/create.png)](http://gracece.net/blog/wp-content/uploads/2012/08/create.png)
+[![创建SVN库](http://ww1.sinaimg.cn/large/50b560a5gw1e6dfng8cb1j20rc0ac0us.jpg)](http://ww1.sinaimg.cn/large/50b560a5gw1e6dfng8cb1j20rc0ac0us.jpg)
 
 
 
@@ -51,7 +51,7 @@ SAE默认是没有给我们创建SVN 库的，所以我们需要自己动手点�
 第一步，创建一个新文件夹作为本地工作目录(Working directory)，可以使用应用名为文件夹名。如，为我的应用glygo创建本地工作目录。在文件夹内右键-->点击“SVN Checkout”
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/createSVN-windows.png)](http://gracece.net/blog/wp-content/uploads/2012/08/createSVN-windows.png)
+[![](http://ww2.sinaimg.cn/large/50b560a5gw1e6dfny16tsj20j50dxgmr.jpg)](http://ww2.sinaimg.cn/large/50b560a5gw1e6dfny16tsj20j50dxgmr.jpg)
 
 
 在弹出页面中填写仓库路径即可，这里是：
@@ -63,7 +63,7 @@ SAE默认是没有给我们创建SVN 库的，所以我们需要自己动手点�
 把后面的改成你app的名字即可，其它默认参数即可，如图:
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/new.png)](http://gracece.net/blog/wp-content/uploads/2012/08/new.png)
+[![](http://ww3.sinaimg.cn/large/50b560a5gw1e6dfoc3vydj20gf0b8q43.jpg)](http://ww3.sinaimg.cn/large/50b560a5gw1e6dfoc3vydj20gf0b8q43.jpg)
 
 Reversion处，“HEAD revision”是指最新版，也可以指定Revision为任意一个版本。
 
@@ -73,14 +73,14 @@ Reversion处，“HEAD revision”是指最新版，也可以指定Revision为�
 点击“OK”，出现下载界面，如果一切顺利，应用所有版本代码将会全部出现在刚刚创建的glygo文件夹下。
 
 
-## [![](http://gracece.net/blog/wp-content/uploads/2012/08/data.png)](http://gracece.net/blog/wp-content/uploads/2012/08/data.png)
+## [![](http://ww1.sinaimg.cn/large/50b560a5gw1e6dfooy2jyj20gz0b0q48.jpg)](http://ww1.sinaimg.cn/large/50b560a5gw1e6dfooy2jyj20gz0b0q48.jpg)
 
 ## 4、修改文件或增加文件夹
 
 
 如果要修改代码，则在本地使用你喜欢的编辑器，编辑任意文件，保存后该文件图标将会出现红色感叹号。下面需要提交(commit)最近的更新。在需要更改的文件上击右键，出现菜单 ，选择“SVN commit”。然后填写关于本次更新的日志（log message），这是必填项，否则commit会失败。如图：
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/commit.png)](http://gracece.net/blog/wp-content/uploads/2012/08/commit.png)
+[![](http://ww4.sinaimg.cn/large/50b560a5gw1e6dfp6x7voj20gl0dxdh8.jpg)](http://ww4.sinaimg.cn/large/50b560a5gw1e6dfp6x7voj20gl0dxdh8.jpg)
 
 之后若看到finished！的提示，则提交成功，并且项目的SVN版本号加1。
 
@@ -89,7 +89,7 @@ Reversion处，“HEAD revision”是指最新版，也可以指定Revision为�
  在 SVN工作目录下，对于文件修改，完成后只需要commit就ok了，但对于新增文件，或者从其它目录复制进来的文件或文件夹，需要在commit之前需 要做一步add操作，即将文件或文件夹添加到svn工作目录中来，否则SVN客户端不认它。具体操作很简单，如图：
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/add.png)](http://gracece.net/blog/wp-content/uploads/2012/08/add.png)
+[![](http://ww2.sinaimg.cn/large/50b560a5gw1e6dfppm04pj20k70b0gmw.jpg)](http://ww2.sinaimg.cn/large/50b560a5gw1e6dfppm04pj20k70b0gmw.jpg)
 
 
 add完后，再右击commit，填写必要的commit信息即可上传。

@@ -10,6 +10,8 @@ description: 前一阵子将班级网站的代码整理了一下，所谓整理�
 categories:
 - php
 - SSP
+tags:
+- php
 ---
 
 
