@@ -5,6 +5,7 @@ date: 2013-06-30 13:11:05+00:00
 layout: post
 slug: first-half-of-year
 title: 上半年总结
+description: 大学已经过了一半，感慨时间飞快的同时也叹息自己在这两年又学到了什么。 回头看看我在2012年度总结中写下的对自己的期望：
 wordpress_id: 867
 categories:
 - 日志

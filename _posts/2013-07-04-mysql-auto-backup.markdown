@@ -5,6 +5,7 @@ date: 2013-07-04 13:01:25+00:00
 layout: post
 slug: mysql-auto-backup
 title: mysql 数据库定时备份
+description: 网站再小，数据也是无价的，做好数据的备份工作是对自己负责更是对用户负责。这里给出使用crontab定时执行备份脚本并备份到 `dropbox`的方法。
 wordpress_id: 878
 categories:
 - linux

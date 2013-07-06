@@ -6,6 +6,7 @@ layout: post
 slug: a-simple-weixin-robot-using-php
 title: 一个简单的微信机器人
 wordpress_id: 836
+description: 闲来无事（明明是还有好多作业没有做T_T),想把前一阵子给班里面注册的微信公共帐号给搞起来。具体的目的是，通过微信简单的指令，能够查询m.sysucs.org 上面的通知或者作业，方便其他同学使用。进一步的想法是能增加点趣味性，实现一些简单的关键词回复，并且用户可以按照规定的方式增加新的关键词与回答。
 categories:
 - php
 - SSP

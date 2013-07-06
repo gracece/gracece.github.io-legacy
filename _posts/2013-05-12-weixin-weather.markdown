@@ -6,6 +6,7 @@ layout: post
 slug: weixin-weather
 title: 微信天气简单实现
 wordpress_id: 847
+description: 近日想在班级微信加点新功能，但是暂时没有想到什么好点子，那就先实现个简单的天气查询吧。 google一下天气相关的接口，考虑简单易用选择了国家气象局提供的天气预报接口。 打开[这里](http://m.weather.com.cn/data/101280101.html),可以看到返回的是JSON数据。
 categories:
 - php
 - SSP

@@ -2,14 +2,11 @@
 html, body {
   background-color: #eee;
 }
-body {
-  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-}
 .container > footer p {
   text-align: center; /* center align it with the container */
 }
 .container {
-  width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+  width: 940px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
 /* The white background content wrapper */
@@ -68,4 +65,131 @@ body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-	
+body {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+li, p {
+  line-height: 22px;
+  font-size: 14px;
+}
+
+h1 {font-size: 24px; clear: both;}
+h3 {font-size: 18px;}
+h4 {font-size: 16px;}
+
+h3,h4 {line-height: 42px; clear: both;}
+
+code {
+  background-color: #D0D0D0;
+  font-size: 12px;
+  color: #333333;
+}
+
+blockquote {
+  color: #909090;
+  margin: 0 0 18px 18px;
+}
+
+blockquote p {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.highlight pre {background-color: #505050;}
+.highlight pre code{color: white;}
+
+.signature {
+  font-size: 15px;
+  color: #9D9D9D;
+  font-style:italic;
+}
+
+/* post content in post page*/
+div.span8 {
+  width: 680px;
+}
+
+/* right sidebar in post page*/
+div.span4 {
+  width: 220px;
+}
+
+/**************** homepage ********************/
+div.home-page-content {
+  
+}
+
+div.home-page-post .date {
+  color: #9D9D9D;
+  font-size: 16px;
+}
+
+div.home-page-post label{
+  font-weight: bold;
+  display: inline;
+}
+
+div.home-page-post div.post-header{
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+}
+
+div.home-page-post div.post-header .tags span, div.home-page-post div.post-header .category span {
+  font-size: 12px;
+}
+
+div.home-page-post div.post-content{
+  overflow: hidden;
+}
+
+div.home-page-post div.post-content div.title{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div.home-page-post div.post-content div.abstract{
+  color: #444444;
+}
+
+div.post-footer {
+  border-bottom: 1px solid #EAEAEA;
+  margin: 10px 0;
+  clear: both;
+  line-height: 0;
+}
+
+div.home-page-sidebar {
+  /*width: 100%;*/
+  /*float: right;*/
+  margin: 10px;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  border-radius: 3px 3px 3px 3px;
+  padding: 3px 6px;
+  width: 100%;
+  background-color: #EEEEEE;
+}
+
+/******************* images *******************/
+img[alt=avatar], img[alt="jekyll-bootstrap-dir-structure"] { 
+  float: left; 
+  margin-right: 30px;
+}
+
+img[alt="rss feed"] { 
+  float: right; 
+  margin-top: 5px;
+}
+
+img[alt="blogging"] { 
+  float: left; 
+  width: 500;
+  height: 326;
+  margin-right: 20px;
+}
+
