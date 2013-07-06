@@ -21,7 +21,7 @@ tags:
 安装完，用17ce测试一下，果然不出所料，一片红啊：
 
 
-[![17ce测试图](http://gracece.net/blog/wp-content/uploads/2012/09/DeepinScreenshot-0250.png)](http://gracece.net/blog/wp-content/uploads/2012/09/DeepinScreenshot-0250.png)
+![17ce测试图](http://ww1.sinaimg.cn/large/50b560a5gw1e6df05ak0kj20jy0ef3zy.jpg)
 
 
 
@@ -37,7 +37,7 @@ tags:
 
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/09/c25b46e1348d6ef7c2b809442654070d.jpg)](http://gracece.net/blog/wp-content/uploads/2012/09/c25b46e1348d6ef7c2b809442654070d.jpg)
+[![](http://ww1.sinaimg.cn/large/50b560a5gw1e6df13w8d5j20lu09c752.jpg)](http://ww1.sinaimg.cn/large/50b560a5gw1e6df13w8d5j20lu09c752.jpg)
 
 
 

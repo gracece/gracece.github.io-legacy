@@ -34,7 +34,7 @@ tags:
 
 最后再感谢下手[写体网](http://shouxieti.com/?p=1515)帮我写的网站logo。
 
-[![dddd.png](http://gracece.net/blog/wp-content/uploads/2012/12/dddd.png)](http://gracece.net/blog/wp-content/uploads/2012/12/dddd.png)
+[![dddd.png](http://ww4.sinaimg.cn/large/50b560a5gw1e6dev8y3uaj20dw06i74l.jpg)](http://ww4.sinaimg.cn/large/50b560a5gw1e6dev8y3uaj20dw06i74l.jpg)
 
 
 

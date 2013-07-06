@@ -28,9 +28,9 @@ tags:
 后来看到[wp4sae](http://wp4sae.org/2012/06/wordpress-for-sae-3-4-1-rc0-release/)关于最新测试版文章升级后可能出现问题的解决办法，可以通过sae后台清除memcache，并在代码管理里面将可怜的不被支持的主题删除，使得wordpress改为默认主题重新载入。抓住救命稻草，果然真的可以！我提着的心终于放了下来，谁想每天写完两篇文章然后博客就down掉啊。
 
 
-[![](http://glygo-wordpress.stor.sinaapp.com/blog/wp-content/uploads/2012/08/memcache.png)](http://gracece.net/blog/wp-content/uploads/2012/08/memcache.png)另外一件事情，经过一番折腾，提交sitemap，用SEO插件，昨天谷歌已经收录我这个博客了，百度还没有任何踪迹，蜘蛛都没来爬过。百度搜索真是一潭深水啊，怪不得搞技术的都喜欢谷歌。国内的其他搜索引擎我就不说什么了。
+[![](http://ww2.sinaimg.cn/large/50b560a5gw1e6df4kohdlj20mn0dr3zx.jpg)](http://ww2.sinaimg.cn/large/50b560a5gw1e6df4kohdlj20mn0dr3zx.jpg)另外一件事情，经过一番折腾，提交sitemap，用SEO插件，昨天谷歌已经收录我这个博客了，百度还没有任何踪迹，蜘蛛都没来爬过。百度搜索真是一潭深水啊，怪不得搞技术的都喜欢谷歌。国内的其他搜索引擎我就不说什么了。
 
 
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/serchgly.png)](http://gracece.net/blog/wp-content/uploads/2012/08/serchgly.png)下午试试升级到wp3.4.1测试版，搞定之后真的要开始看CSS 了。
+[![](http://ww3.sinaimg.cn/large/50b560a5gw1e6df7ulmfjj20ny035wev.jpg)](http://ww3.sinaimg.cn/large/50b560a5gw1e6df7ulmfjj20ny035wev.jpg)下午试试升级到wp3.4.1测试版，搞定之后真的要开始看CSS 了。

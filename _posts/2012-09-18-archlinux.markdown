@@ -20,7 +20,7 @@ tags:
 于是在昨天，周一下午，上完还算愉快的马原课，背着电脑来到前台。Beginners' Guide已经看过了，也试着在vbox上装了一次，虽然最后到装X那一步卡住了，囧，但觉得前面的步骤都没问题了，所以直接上吧。先看看我装完后的磁盘：
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/09/mydisk.png)](http://gracece.net/blog/wp-content/uploads/2012/09/mydisk.png)
+[![](http://ww4.sinaimg.cn/large/50b560a5gw1e6dev8y3uaj20dw06i74l.jpg)](http://ww4.sinaimg.cn/large/50b560a5gw1e6dev8y3uaj20dw06i74l.jpg)
 
 
 第一次安装：
@@ -336,13 +336,10 @@ UTC:
 pacman 会从服务器下载 `/etc/pacman.conf` 中定义的主软件包列表，进行所有可用的升级操作。此时可能会提示说 pacman 自己需要先进性升级，如果这样，请选择是并在完成后重新执行 `pacman -Syu` 。
 
 
-> 
 
-> 
-> ##### Arch 滚动发布模式
-> 
-> 
-请记住 Arch 是 **滚动发布** 的发行版。这意味着升级到新版本不需要重装或者重新建构。只需要定期执行 `pacman -Syu` 就可以将系统保持在最新前沿状态。升级后，系统完全是最新的。如果内核升级了，请记得 **重新启动**。
+##### Arch 滚动发布模式
+
+    请记住 Arch 是 **滚动发布** 的发行版。这意味着升级到新版本不需要重装或者重新建构。只需要定期执行 `pacman -Syu` 就可以将系统保持在最新前沿状态。升级后，系统完全是最新的。如果内核升级了，请记得 **重新启动**。
 
 
 
@@ -357,15 +354,11 @@ pacman 会从服务器下载 `/etc/pacman.conf` 中定义的主软件包列表
 
 ### 添加一个用户
 
-
-
-    
     adduser grace
 
 
 要求输入信息，直接回车，到additional grounp的时候输入
 
-    
     lp,audio,video,power,scanner,games,wheel,storage
 
 

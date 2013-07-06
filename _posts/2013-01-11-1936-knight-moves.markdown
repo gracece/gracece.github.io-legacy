@@ -16,7 +16,7 @@ categories:
 
 首先要知道的就是国际象棋的移动方法，然后用BFS就可以了。
 
-![](http://p.blog.csdn.net/images/p_blog_csdn_net/livelylittlefish/%E6%A3%8B%E7%9B%98.jpg)
+![](http://ww4.sinaimg.cn/large/50b560a5gw1e6detdkjgjj20ek0c8754.jpg)
 
 
     #include <iostream>

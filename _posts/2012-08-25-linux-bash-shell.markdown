@@ -41,7 +41,7 @@ tags:
 然后在终端输入google就可以直接打开谷歌页面，输入 `google sth`就可以搜索这个关键词。如果嫌google太长，那也可以直接改为单字母g，这样更加简介。效果：
 
 
-[![](http://gracece.net/blog/wp-content/uploads/2012/08/bash-google.png)](http://gracece.net/blog/wp-content/uploads/2012/08/bash-google.png)
+[![](http://ww2.sinaimg.cn/large/50b560a5gw1e6df1znw6gj20np0fhjv5.jpg)](http://ww2.sinaimg.cn/large/50b560a5gw1e6df1znw6gj20np0fhjv5.jpg)
 
 
 可以参考 [shell编程基础](http://wiki.ubuntu.org.cn/Shell%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80)，[Linux Deepin 终端彩蛋](http://planet.linuxdeepin.com/2012/03/12/easter-egg-in-linux-deepin-terminal/)，增加属于你自己的命令，比如输入weibo就打开微博页面等（虽然微博控是不好滴）。
