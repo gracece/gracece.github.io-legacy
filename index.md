@@ -18,7 +18,7 @@ title: Gracece's Blog
 				</div>
 				<div class="category"> 
 					<label>Category: </label>
-					<span>{{ post.categories }}</span>
+					<span>{{ post.categories | array_to_sentence_string }}</span>
 				</div>
 			</div>
 			<div class="post-content">
