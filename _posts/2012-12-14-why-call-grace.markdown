@@ -18,7 +18,7 @@ tags:
 
 
  
-## grace [英] [ɡreis] [美] [ɡres]
+## grace 
 	
 **n.**恩泽；优雅；慈悲；魅力
 
