@@ -42,8 +42,6 @@ Usage:
         <ul>
       {% else %}    
         {% if this_month != next_month %}
-          </ul>
-          <ul>
         {% endif %}
       {% endif %}
     {% endif %}
