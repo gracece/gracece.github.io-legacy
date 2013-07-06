@@ -1,0 +1,17 @@
+---
+author: admin
+comments: true
+date: 2012-08-08 18:00:19+00:00
+layout: post
+slug: hot-boy
+title: 我真是热血青年
+wordpress_id: 144
+categories:
+- 日志
+post_format:
+- 日志
+tags:
+- 热血
+---
+
+说好要早睡，结果睡不着，睡前刚看到主机屋免费主机可以申请了。然后我躺下半个小时又爬起来，把wordpess搞上去了。

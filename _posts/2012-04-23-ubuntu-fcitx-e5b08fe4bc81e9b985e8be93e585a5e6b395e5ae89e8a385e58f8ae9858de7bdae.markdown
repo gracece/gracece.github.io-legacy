@@ -1,0 +1,122 @@
+---
+author: admin
+comments: true
+date: 2012-04-23 12:14:00+00:00
+layout: post
+slug: ubuntu-fcitx-%e5%b0%8f%e4%bc%81%e9%b9%85%e8%be%93%e5%85%a5%e6%b3%95%e5%ae%89%e8%a3%85%e5%8f%8a%e9%85%8d%e7%bd%ae
+title: Ubuntu fcitx 小企鹅输入法安装及配置
+wordpress_id: 153
+categories:
+- linux
+tags:
+- fcitx
+- ubuntu
+- 输入法
+---
+
+ubutnu 的本身自带的是ibus输入法，不怎么好用，所以决定换换输入法。那就换小企鹅输入法。
+
+**关于 Fcitx 小企鹅输入法**
+
+
+> Fcitx──小企鹅输入法：Free Chinese Input Toy for X是一个以 GPL方式发布的、基于XIM的简体中文输入法(即原来的G五笔)，包括拼音(全拼和双拼)、区位以及码表输入模块，是在Linux操作系统中使用的中文输入法，当然也能在中使用，您可以到官方站下载；fcitx应该也适用于 OS X/intel……
+
+
+Fcitx──小企鹅输入法最大的特点是容易安装和使用，无论是拼音还是码表输入都极为强劲。在输入法的自定义使用上也极为灵活。
+
+
+## 1. 安装
+
+
+在ubuntu的终端里面，输入：
+
+    
+     sudo apt-get install fcitx im-switch
+
+
+说明一下：im-switch，这个软件，是用来在linux系统下面，切换“输入法平台”的，后面会用到的。
+如果你想下载最新版本，也可以去它的[官方网站](http://www.fcitx.org/main/?q=node/9)，来获得最新版本的“源代码包”。但是这种方法安装有点麻烦，因此不推荐新手使用。
+
+
+## 2、安装后的设置
+
+
+安装好以后，我们不能立刻使用它呢。需要进行下面的设置才行。
+第一：终端里面，输入：
+
+    
+    sudo im-swith -c
+
+
+会出现输入法选择框，自己按照数字，来选择你的fcitx，选择后，重新启动电脑。
+第二：在终端里面，输入：
+
+    
+    sudo gedit ~/.fcitx/config
+
+
+将“显示字体(中)=*”改为“显示字体(中)=WenQuanYi Zen Hei”，保存后注销下再登陆就 OK 了。
+注意：如果你的 locale 不是 gbk 或 gb2312 ，那么打开 ~/.fcitx/config 后会是乱码，切记不要改变配置文件的编码类型。只要找到第一行的“ *”，改一下就好了。其他的不要动。
+这下，你就能开始正常使用Fcitx，小企鹅输入法了。
+
+各大发行版都有提供自己的输入法选择工具，并且在打包时提供了额外的配置脚本。 在具体使用的时候**请尽量使用发行版提供的工具，而不是自己配置输入法**。
+
+
+
+	
+  * Fedora：使用im-chooser（图形界面）
+
+	
+  * Debian，Ubuntu：im-switch，执行 im-switch -s fcitx，im-config（图形界面）
+
+	
+  * OpenSUSE：~/.profile中加入export INPUT_METHOD="fcitx"
+
+
+
+
+## 3、 跟随桌面环境自动启动
+
+
+对于支持 xdg 标准的桌面环境，例如 gnome，kde，xfce，lxde， 可以将文件 安装目录/share/applications/fcitx.desktop 建立符号链接或者复制到 ~/.config/autostart/ 或者/etc/xdg/autostart（/usr/local/etc/xdg/autostart/） 目录里：
+
+    
+    ln -s 安装目录/share/applications/fcitx.desktop ~/.config/autostart/fcitx.desktop
+
+
+如果你采用独立的窗口管理器，例如Openbox，XMonad，等等。 不建议在~/.xinitrc 当中直接执行fcitx，而建议是采用这些窗口管理器的自动启动机制。 如果你希望使用IM Module，但是无法正确初始化DBus（IM Module依靠DBus进行通信），那将可能导致无法在GTK和QT程序中启用输入法。
+
+**配置：**
+
+    
+    grace@grace-Lenovo-G470:~$ gedit ~/.config/fcitx/
+        conf/         config        googlepinyin/ pinyin/       profile
+    grace@grace-Lenovo-G470:~$ gedit ~/.config/fcitx/config
+
+
+**tips1： 常用字表**
+
+设置常用字表的目的是为了方便录入某些常用字。
+
+在候选字中，处于该表中的字总是排在其它字的前面。 fcitx的默认常用字表是空的。您可以用左ctrl+8/7来添加/删除常用字。 例如，您希望录入“d”时，“的”总放在第一个，可以按一下操作：
+
+
+
+	
+  1. 进入拼音状态。
+
+	
+  2. 输入“d”，用翻页键-=/,.查找“的”字，直到它显示在候选字表中按ctrl+8， 然后按“的”前面的数字序号即可。
+
+
+按上述操作可以为某个拼音编码设置多个常用字。您可以设置常用字表内的字频调节方式。
+
+**tips2： 制作拼音库**
+
+在tools目录下提供了一个制作拼音库的工具createPYMB。用法如下：
+
+./createPYMB {_拼音单字库_} {_拼音词组库_}
+
+该工具将在当前目录下生成pybase.mb和pyphrase.mb， 将它复制到您的fcitx安装目录下的share/fcitx/data中替换原有文件， 或者放到~/.config/fcitx/pinyin （可以重命名，但后缀需要是mb）即可。
+
+在源码包的data目录下包括了单字库和词组库，文件名为gbkpy.org和pyPhrase.org。 它们都是文本文件。一般说来，单字库无需更改，您可以将自己的词组加入到pyPhrase.org中，从而生成自己的词库。

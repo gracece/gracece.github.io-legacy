@@ -1,0 +1,293 @@
+---
+author: admin
+comments: true
+date: 2013-01-26 07:14:18+00:00
+layout: post
+slug: ssp-4-1
+title: 读书笔记[4]-第4章 字符串操作与正则表达式
+wordpress_id: 774
+categories:
+- SSP
+tags:
+- ssp
+---
+
+sorry，拖延症发作，又拖了这么久，进入正题。
+
+第四章的主要内容是对字符串的操作以及正则表达式的使用，在处理文本数据时候这些是必不可少的。
+
+从实例出发，这一章是要实现bob汽车商店对用户反馈信息的处理，主要是收集用户的反馈信息并进行简单处理分析，再根据不同内容发送到不同的邮箱中。先直接上代码。
+
+
+
+    <?php
+    //使用trim清除多余的空格
+    $name =trim($_POST['name']);
+    $email = trim( $_POST['email']);
+    $feedback = trim($_POST['feedback']);
+
+    //set up my information
+    if(preg_match('#@gracece.net#i',$email))
+        $toaddress = "ooxx@gmail.com";
+    else
+        $toaddress = "xxoo@qq.com";
+
+    if(preg_match('#快递|送货|发货#',$feedback))
+        echo "配送问题";
+    else if(preg_match('#款式|订购|折扣#',$feedback))
+        echo "售前问题";
+
+    $subject = "feedback from gracece.asia";
+
+    $mailcontent = "name:".$name."\n".
+        "email: ".$email."\n".
+        "comments:\n".$feedback."\n";
+
+    $fromaddress = "From:i@gracece.asia";
+    mail($toaddress,$subject,$mailcontent,$fromaddress);
+
+    ?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>feedback submitted</title>
+    </head>
+    <body>
+    <h1>feedback submitted!</h1>
+    <hr />
+    <p>your feedback is shown below:</p>
+    <p><?php echo nl2br($mailcontent); ?></p>
+
+    </body>
+    </html>
+
+
+下面说说几个常用且好用的函数。
+
+
+### 字符串的格式化
+
+
+
+
+#### [trim()](http://cn2.php.net/manual/zh/function.trim.php)
+
+
+去除字符串开始位置和结束位置的空格，这里除去的内容包括换行（\n)、回车(\r)、水平和垂直制表符(\t & \x0B)、字符串的结束符(\0)和基本的空格。另外相应的，有ltrim() 和rtrim() 只对字符串的左边或者右边进行处理。同时可以在第二个参数具体给定所需除去的字符，未给定则除去以上默认几个。
+
+
+#### [nl2br()](http://cn2.php.net/manual/zh/function.nl2br.php)
+
+
+用`<br />`替换字符串中出现的换行符，这个在对字符串进行输出时候会用到。注意当第二个参数给点false时，是用`<br>`替换。
+
+
+#### 大小写转换
+
+
+
+
+
+	
+  * strtoupper() 全部转换为大写
+
+	
+  * strtolower() 全部转换为小写
+
+	
+  * ucfirst()  如果字符串第一个是字母，就将该字符转换为大写
+
+	
+  * ucwords() 将字符串每个单词的第一个字符转换为大写
+
+
+
+
+### [printf()](http://php.net/manual/en/function.printf.php)和[sprintf()](http://php.net/manual/en/function.sprintf.php)
+
+
+这两个函数都是能够按照要求对字符串进行格式化。使用过c语言的话应该对printf函数很熟悉了，可惜我平时都是用cout的，虽然也偶有接触过printf，但是看着各种百分号就头大没有认真去学习这个函数。这次算真正进行了解，发现这个函数还是非常好用且强大的。printf() 和sprintf()的区别主要是在于sprintf是把得到的结果返回到一个string中，而printf是直接就输出了，返回值为void。函数原型为：
+
+
+> string **sprintf** ( string `$format` [, [mixed](http://php.net/manual/en/language.pseudo-types.php#language.types.mixed)`$args` [, [mixed](http://php.net/manual/en/language.pseudo-types.php#language.types.mixed)`$...` ]] )
+
+
+第一个参数是个string类型，包含了要输出的基本内容，同时包含了格式化的要求，后面给出的参数将会按照要求进行替换。先看一个简单的例子
+
+
+    <?php
+    $num =5;
+    $location  = 'tree';
+    $format = 'There are %d monkeys in the %s';
+    echo sprintf($format,$num,$location);
+    //There are 5 monkeys in the tree
+    ?>
+
+从这个例子我们可以看出，%d被替换成了5，%s则被替换成了第二个参数tree，这是最基本的功能。每一个转换说明都是由百分号开始，同时按以下顺序伴随着几个元素。
+
+
+
+	
+  1. 一个可选的_sign specifier_  (- or +) .。用于对数据进行处理，只有给定“-”时候，一个正数才会强制带正号"+"。
+
+	
+  2. 一个可选的 _padding specifier_ 用于补齐所需显示宽度，默认为空格，可以给定数字0，使得1在宽度为2时显示为01。
+
+	
+  3. 一个可选的 _alignment specifier_ ，当"-"给定时为左对齐，默认为右对齐。
+
+	
+  4. 一个可选的数字 _width specifier_   ，规定显示的最小宽度，不够则默认用空格补齐，或用上面给定参数补齐。
+
+	
+  5. 一个可选的 `precision specifier`，形式为一个小数点 (`.`) 跟着一个十进制数字。用于规定一个数字小数点后面显示的位数或规定一个string类型最大包含的字符数目。
+
+	
+  6. A _type specifier_ 声明变量的类型。
+
+	
+    * _%_ - 用于输出百分号
+
+	
+    * _b_ - 解释为整数并作为二进制输出
+
+	
+    * _c_ - 解释为整数并输出与该值对应的ASCII字符
+
+	
+    * _d_ - 解释为整数并作为小数输出
+
+	
+    * _e_ - 解释为科学计数法输出 (e.g. 1.2e+2).
+
+	
+    * _E_ - 与上面类似 _%e_ 用大写 (e.g. 1.2E+2).
+
+	
+    * _u_ - 解释为整数并作为 unsigned decimal number（无符号十进制数）。
+
+	
+    * _f_ - 解释为双精度并作为浮点数输出。
+
+	
+    * _o_ - 解释为整数并作为八进制输出
+
+	
+    * _s_ - 解释为字符串并输出。
+
+	
+    * _x_ - 解释为整数并作为带小写字母a-f的十六进制输出
+
+	
+    * _X_ - 解释为整数并作为带大写字母A-F的十六进制输出
+
+
+
+
+
+可以看出，这个函数能够处理各种复杂的数字并进行转换输出。另外注意，参数的顺序并不一定要跟转换说明中的顺序相同，只需要在%后面添加参数的位置并以$结尾即可，在参数多次使用的情况下这个很重要。说说具体的例子，比如要下载一个网站中的多个资源，且这些资源的命名都是有规律的增加数字的大小，那么就可以通过一个循环来改变数字的大小从而得到下载地址。因为在php中字符串类型和数字类型的变量直接相加并不能得到连接两个变量的效果，而使用sprintf就能够简单实现:
+
+    <?php
+        $id = 1234;
+        $num = 88;
+        $origin = "http://www.example.com/img/";
+        $origin =sprintf("%s%d/",$origin,$id);
+        $path = sprintf("%s%d","./download/",$id);
+
+        mkdir($path,0775);
+        while($num != 0)
+        {
+            $url = sprintf("%s%02d.jpg",$origin,$num);
+            echo $url;
+            echo "\n";
+            $ua ="Mozilla/5.0 (X11; U; Linux i686; pl-PL; rv:1.9.0.2) Gecko/20121223 Ubuntu/9.25 (jaunty) Firefox/3.8";
+            shell_exec("wget -b -nc -a log -U '".$ua."' --restrict-file-names=nocontrol -P ".$path." ".escapeshellarg($url));
+            // -b 后台下载
+            // -nc 文件已经存在时不覆盖
+            // --restrict-file-names 解决中文地址导致文件名乱码的问题
+            // -P 保存路径 -U 设置user-agent -a 日志文件
+            $num --;
+        }
+    ?>
+
+
+#### 字符串的连接和分割
+
+
+这一部分经常用到
+
+
+
+	
+  * explode() 按要求分割字符串并返回数组
+
+	
+  * implode() 按要求把数组里面的元素合并为字符串
+
+	
+  * strtok() 每次取出一些片段进行处理
+
+	
+  * substr() 按要求获取子字符串
+
+
+
+
+#### 字符串的比较
+
+
+
+
+
+	
+  * strcmp() 字典序比较，区分大小写，例如2大于12
+
+	
+  * strcasecmp() 同上，不区分大小写
+
+	
+  * strnatcmp() 自然排序字符串，例如12大于2
+
+	
+  * strnatcasecmp()同上不区分大小写
+
+	
+  * strlen() 字符串的长度
+
+
+
+
+#### 字符串的匹配和替换
+
+
+
+
+
+	
+  * strstr() /strchr() 查找字符串并返回目标第一次出现位置到结尾的子串
+
+	
+  * stristr() 同上，忽略大小写
+
+	
+  * strrstr()查找目标字符串并返回目标最后一次出现位置到结尾的子串
+
+	
+  * strpos() 对应与strstr(),返回的是第一次出现的位置而不是子串。**效率高，如果只是要获取位置或判断是否匹配，推荐用这个。**
+
+	
+  * strrpos() 返回最后一次出现的位置
+
+	
+  * str_replace() substr_replace() 用于替换
+
+
+
+
+> 对于这些函数不再赘述，要用时候查阅参考手册效果更好。
+
+
+函数很多，关键还是要根据需求多用才能熟练。
+
+篇幅太长，再加上正则表达式也是个大boss，那就把正则表达式独立出来讲吧。

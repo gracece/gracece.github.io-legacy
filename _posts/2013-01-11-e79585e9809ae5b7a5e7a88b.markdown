@@ -1,0 +1,179 @@
+---
+author: admin
+comments: true
+date: 2013-01-11 03:17:06+00:00
+layout: post
+slug: '%e7%95%85%e9%80%9a%e5%b7%a5%e7%a8%8b'
+title: 畅通工程
+wordpress_id: 746
+categories:
+- soj
+---
+
+题目描述
+
+
+
+
+
+
+某省自从实行了很多年的畅通工程计划后，终于修建了很多路。不过路多了也不好，每次要从一个城镇到另一个城镇时，都有许多种道路方案可以选择，而某些方案要比另一些方案行走的距离要短很多。这让行人很困扰。
+
+现在，已知起点和终点，请你计算出要从起点到终点，最短需要行走多少距离。
+
+
+
+
+
+
+输入格式
+
+
+
+
+
+
+本题目包含多组数据，请处理到文件结束。
+每组数据第一行包含两个正整数N和M`(0<N<200,0<M<1000)`，分别代表现有城镇的数目和已修建的道路的数目。城镇分别以0～N-1编号。
+接下来是M行道路信息。每一行有三个整数A,B,X(0 < A,B < N ,A!=B,0 < X < 10000),表示城镇A和城镇B之间有一条长度为X的双向道路。
+再接下一行有两个整数S,T(0 <= S,T < N)，分别代表起点和终点。
+
+
+
+
+
+
+
+
+输出格式
+
+
+
+
+
+
+对于每组数据，请在一行里输出最短需要行走的距离。如果不存在从S到T的路线，就输出-1.
+
+
+
+
+样例输入
+
+    
+    3 3
+    0 1 1
+    0 2 3
+    1 2 1
+    0 2
+    3 1
+    0 1 1
+    1 2
+
+
+
+
+
+
+
+样例输出
+
+    2
+    -1
+
+
+
+
+> 每两个村庄的直线距离都可能有多个，要进行判断!
+
+
+
+
+
+
+    #include <iostream>
+    #include <vector>
+    #include <queue>
+    #include <stack>
+    #include <string>
+    #include <algorithm>
+    using namespace std;
+    #define N 1000000
+
+    struct cmp
+    {
+        bool operator()(const pair<bool,int> &a,const pair<bool,int> &b)
+        {
+            return a.second > b.second;
+        }
+    };
+    int main()
+    {
+        int n;
+        while(cin >>n)
+        {
+           vector<pair<int,int> >distance;
+           vector<int>result;
+           vector<bool> unvisited;
+            int m;
+            cin >>m;
+            int **matrix;
+            matrix  =new int *[n];
+            for (int i = 0; i < n; ++i)
+            {
+                distance.push_back(make_pair(i,N));
+                result.push_back(N);
+                unvisited.push_back(true);
+                matrix[i]= new int[n];
+                for (int j = 0; j < n; ++j)
+                {
+                    if (i !=j)
+                        matrix[i][j] = N;
+                    else
+                        matrix[i][j] = 0;
+                }
+            }
+
+            for (int i = 0; i < m; ++i)
+            {
+                int a,b,x;
+                cin >>a>>b>>x;
+                //坑，每两个村庄的直线距离都可能有多个，要进行判断。
+                if (matrix[a][b]>x)
+                {
+                matrix[a][b]=x;
+                matrix[b][a]=x;
+                }
+            }
+
+            int start,end;
+            cin >>start>>end;
+            distance[start].second = 0;
+            while(unvisited[end] == true)
+            {
+                sort(distance.begin(),distance.end(),cmp());
+                int now = distance.back().first;
+                unvisited[now] = false;
+                result[now] = distance.back().second;
+                distance.pop_back();
+                 if (now == end)
+                {
+                    if (result[end] == N)
+                    {
+                        cout <<"-1"<<endl;
+                    }
+                    else
+                        cout<<result[end]<<endl;
+                    break;
+                }
+                for (int i = 0; i < distance.size(); ++i)
+                {
+                    int alt = result[now] + matrix[now][distance[i].first];
+                    if ( alt<distance[i].second)
+                    {
+                        distance[i].second = alt;
+                    }
+                }
+
+            }
+        }
+    }

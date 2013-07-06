@@ -1,0 +1,99 @@
+---
+author: admin
+comments: true
+date: 2013-01-11 06:55:08+00:00
+layout: post
+slug: 1936-knight-moves
+title: 1936. Knight Moves
+wordpress_id: 754
+categories:
+- soj
+---
+
+题目来源：http://soj.me/1936
+
+题目有点长，就不粘贴过来了。
+
+首先要知道的就是国际象棋的移动方法，然后用BFS就可以了。
+
+![](http://p.blog.csdn.net/images/p_blog_csdn_net/livelylittlefish/%E6%A3%8B%E7%9B%98.jpg)
+
+
+    #include <iostream>
+    #include <cstdlib>
+    #include <vector>
+    #include <queue>
+    #include <string>
+    using namespace std;
+
+    typedef pair<int , int> Vertex;
+    bool valid(Vertex q)
+    {
+        if((q.first >=0)&&q.first<8 && q.second >=0 && q.second <8)
+            return true;
+        else 
+            return false;
+    }
+    vector<Vertex> adjacentList(Vertex p)
+    {
+        int dx[] = {-2,-2,-1,-1,1,1,2,2};
+        int dy[] = { -1,1,-2,2,-2,2,-1,1};
+        vector<Vertex> v;
+        Vertex q;
+        for (int i = 0; i < 8; ++i)
+        {
+            q = make_pair(p.first+ dx[i],p.second +dy[i]);
+            if(valid(q))
+                v.push_back(q);
+        }
+        return v;
+    }
+    int BFS(Vertex s,Vertex t)
+    {
+        if (s == t)
+            return 0;
+        vector<bool> f(8,false);
+        vector<vector <bool> > flag (8,f); //初始化二维标记向量
+        flag[s.first][s.second] = true;
+        queue<pair <Vertex,int> > que;
+        que.push(make_pair(s,0));  //坐标，距离
+        while(!que.empty())
+        {
+            pair<Vertex,int> vd = que.front();
+            que.pop();
+            Vertex v = vd.first;
+            if(v == t)
+            {
+                return vd.second;
+            }
+            vector<Vertex> ads = adjacentList(v);
+            for (int i = 0; i < ads.size(); ++i)
+            {
+               if (!flag[ads[i].first][ads[i].second])
+                {
+                    flag[ads[i].first][ads[i].second]= true;
+                    que.push(make_pair(ads[i],vd.second + 1));
+                } 
+            }
+        }
+        return -1;
+    }
+
+    int main()
+    {
+        int t;
+        cin >> t;
+        while(t--)
+        {
+            string start,end;
+            cin >> start >>end;
+            Vertex s,t;
+            s.first = start[0] - 'a';
+            s.second = start[1] -'1';
+            t.first = end[0] -'a';
+            t.second = end[1] - '1';
+       
+            cout<<"To get from "<<start<<" to "<<end<<" takes "
+                 <<BFS(s,t)<<" knight moves."<<endl;
+        }
+    }

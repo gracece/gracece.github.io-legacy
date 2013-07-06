@@ -1,0 +1,103 @@
+---
+author: admin
+comments: true
+date: 2012-12-08 07:08:20+00:00
+layout: post
+slug: ssp-1
+title: 读书笔记[1]--第一章 php快速入门
+wordpress_id: 636
+categories:
+- SSP
+tags:
+- ssp
+---
+
+这是 《php和mysql web开发》的第一章。
+这一章主要内容是通过一个实例：Bob的汽车零部件商店 ，来串联php的基本知识。自己本身是学过C++的，所以对于条件语句和循环语句都还是比较熟悉的，这一部分就基本没有什么问题。我把自己认为自己不懂或者容易忘记的知识点记录下来，以便查看。另外在学习这一章的过程中按照书本指示写了“汽车零部件商店”的两个文件，分别是[orderform.html](https://github.com/gracece/php-mysql-code/blob/master/orderform.html)  [processorder.php](https://github.com/gracece/php-mysql-code/blob/master/processorder.php) ，考虑到后面的学习过程中可能还需要更改这两个文件，所以在就不贴在这里了，请直接在github查看。
+
+
+php标记风格四种风格
+
+
+	//XML风格
+	<?php echo 'something'; ?>
+	//简短风格
+	<? echo 'something'; ?>
+	//SCRIPT风格
+	<script language= 'php'&gt;echo 'something';</script>
+	//ASP风格
+	<% echo 'something'; %>
+
+
+XML风格是PHP推荐使用的风格，可以保证在所有的服务器上使用这种标记。
+简短风格不推荐使用，因为在许多默认环境不受支持。
+SCRIPT风格，个人觉得太长了，不够简洁。
+ASP风格，默认禁用，如果不是编辑器有限制只能使用这种标记，那就不应该使用。
+
+
+### 空格
+
+
+间隔字符包括换行回车，空格，tab都会被php引擎忽略。但为了程序的可读性，适当的空格换行还是必要的。
+
+
+### 表单变量的访问
+
+
+	$var                    //short style
+	$_POST[ 'var']          //medium style
+	$HTTP_POST_VARS ['var'] //long style
+
+简短风格默认未启用，而且可能有安全性问题，冗长风格已经被弃用。推荐使用中等风格，
+
+
+### 插值操作
+
+	echo $var. 'something';
+	echo &quot;$var something&quot;;
+	echo '$var something';
+
+第二个将同第一个等价，而第三个不能把变量转为对应的值。插值（interpolation)只是双引号引用的字符串特性，在单引号中无效。
+
+
+### 标识符:
+
+
+标识符是变量的名称,有以下注意事项：
+
+
+
+	
+  * 可以是任何长度，包括任意字母数字下划线
+  * 不能数字开始
+  * 区分大小写 （函数名称例外，可以任意大小写）
+  * 变量名可以和函数名相同，但应该尽量避免
+  * 不需要在使用变量之前声明变量
+
+
+
+
+### 关于php的变量类型
+
+
+php是动态类型语言， 能够自动获得输入的数据类型并返回有相同数据类型的数据。
+
+
+### 声明和使用常量
+
+
+	define（‘PRICE’ ，100）;
+	echo PRICE; 
+
+
+### 操作符之引用操作符
+
+	$a = 5;
+	$b = $a;
+	$a = 7; // $b will still be 5
+	$a = 5;
+	$b = &amp;amp;$a;
+	$a = 7; // $b will be 7
+
+这些就是我学习过程中的笔记，有什么不好的地方欢迎各位斧正。
+下一章是数据的存储与检索，待续。

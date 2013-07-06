@@ -1,0 +1,164 @@
+---
+author: admin
+comments: true
+date: 2012-12-22 13:25:38+00:00
+layout: post
+slug: ssp-3
+title: 读书笔记[3]-第3章 使用数组
+wordpress_id: 713
+categories:
+- SSP
+tags:
+- ssp
+- web
+---
+
+今天刚考完六级，裸考心里相当没底啊。
+在为知笔记中写了一半的笔记意外丢失，那只能重写了，就当是加深记忆吧。废话不多说，直接进入正题。
+
+这一章是介绍如何使用数组。编程语言基本都是相通的，所以在这一章花的时间稍微比较少。另外值得注意的是php允许使用更有意义的数据作为索引，即关联数组。在数据量不大的情况下关联数组使用起来还是比较清晰的。关于数组的初始化以及一些基本内容，这里就不再赘述。下面主要记录下常用的函数。
+
+对于数组，php提供了非常多且功能非常强大的函数，具体可以在[php.net](http://cn2.php.net/manual/zh/book.array.php) 查看。下面我简单记录下自己对几个常用函数的学习过程。
+
+
+
+
+## 使用循环访问数组
+
+
+
+
+	<?php
+	$A = array('a','c','b','g');
+	$B = array('apple'=>10,'cat'=>20,'boy'=>30,'girl'=>40);
+
+	//使用循环访问数组
+	foreach ($A as $current) {
+	 echo $current." ";
+	}
+
+	foreach ($B as $key => $value) {
+	 echo $key."-".$value;
+	}
+
+	//使用each()
+	while ($element = each ($B)) {
+	 echo $element['key'];
+	 echo $element['value'];
+	 echo "<br />";
+	}
+	//使用list()
+	reset($B);//将当前元素重新设置到数组开始处
+	while (list($name,$number) = each($B)) {
+	 echo $name."-".$number."<br />";
+	}
+
+	?>
+
+
+
+注意：在执行 **each()** 之后，数组指针将停留在数组中的下一个单元或者当碰到数组结尾时停留在最后一个单元。如果要再用 each 遍历数组，必须使用 [reset()](http://cn2.php.net/manual/zh/function.reset.php)。
+
+
+## 排序
+
+
+
+	$A = array('a','c','b','g');
+	$B = array('apple'=>10,'cat'=>20,'boy'=>30,'girl'=>40);
+	sort($A);
+	//排序后数组A按照ASCII码从小到大排列，注意，sort还有第二个可选参数
+	//A现在为(a,b,c,d)
+	asort($B);
+	ksort($B);
+	//asort对value排序，ksort对key排序,排序之后对应关系不变。
+
+	rsort($A);
+	arsort($B);
+	krsort($B);
+	//分别是上述几个函数的反向排序
+
+
+这是常用的几个排序函数，注意这几个函数都是有第二个可选参数sort_flag参数实现不同的排序的。具体如下：
+
+`sort_flags`可选的第二个参数 `sort_flags`可以用以下值改变排序的行为：
+
+排序类型标记：
+
+
+
+	
+  * **`SORT_REGULAR`** - 正常比较单元（不改变类型）
+
+	
+  * **`SORT_NUMERIC`** - 单元被作为数字来比较
+
+	
+  * **`SORT_STRING`** - 单元被作为字符串来比较
+
+	
+  * **`SORT_LOCALE_STRING`** - 根据当前的区域（locale）设置来把单元当作字符串比较，可以用 [setlocale()](http://cn2.php.net/manual/zh/function.setlocale.php) 来改变。
+
+	
+  * **`SORT_NATURAL`** - 和 [natsort()](http://cn2.php.net/manual/zh/function.natsort.php) 类似对每个单元以“自然的顺序”对字符串进行排序。 PHP 5.4.0 中新增的。
+
+	
+  * **`SORT_FLAG_CASE`** - 能够与 **`SORT_STRING`** 或 **`SORT_NATURAL`** 合并（OR 位运算），不区分大小写排序字符串。
+
+
+此外还有用户定义排序，这个多用在操作多维数组的时候，需要用户提供compare函数来进行排序。具体可在[php.net](http://cn2.php.net/manual/zh/function.usort.php)查看。
+
+此外，还有许多实用的函数，比如使用shuffle()将数组元素进行随机排序，用array_reverse()给出反序；用count()获取数组的大小等，这些都是要在实践中不断应用才能更好地掌握。特别介绍一下[array_count_values](http://cn2.php.net/manual/zh/function.array-count-values.php) 函数，这个函数可以统计数组中所有的值出现的次数，返回一个关联数组，用 输入的数组中的值作为键名，该值在数组中出现的次数作为值。这个函数在统计小规模的信息时可能用得上。
+
+
+## 数组的指针操作
+
+
+类似于C++ 的指针，php 的数组也有类似指针的操作，相关的函数有
+
+
+
+	
+  * [each](http://cn2.php.net/manual/zh/function.each.php) — 返回数组中当前的键／值对并将数组指针向前移动一步
+
+	
+  * [current](http://cn2.php.net/manual/zh/function.current.php) — 返回数组中的当前单元
+
+	
+  * [reset](http://cn2.php.net/manual/zh/function.reset.php) — 将数组的内部指针指向第一个单元
+
+	
+  * [end](http://cn2.php.net/manual/zh/function.end.php) — 将数组的内部指针指向最后一个单元
+
+	
+  * [next](http://cn2.php.net/manual/zh/function.next.php) — 将数组中的内部指针向前移动一位
+
+	
+  * [prev](http://cn2.php.net/manual/zh/function.prev.php) — 将数组的内部指针倒回一位
+
+
+使用这些函数可以实现对数组的任意操作。
+
+此外，类似于栈的概念，php的数组也有push和pop函数分别是
+
+	
+  * [array_pop](http://cn2.php.net/manual/zh/function.array-pop.php) — 将数组最后一个单元弹出（出栈）
+
+	
+  * [array_push](http://cn2.php.net/manual/zh/function.array-push.php) — 将一个或多个单元压入数组的末尾（入栈）
+
+
+
+
+## 其他实例
+
+
+在前面的[viewphp.php](https://github.com/gracece/php-mysql-code/blob/fc3412110454c2e204b0e70a5468569277866437/vieworders.php)文件中，也可以使用数组来读取文件中的内容，我push到github了。
+
+前一阵子用php写的[离线下载](https://github.com/gracece/offline-download/blob/master/index.php)中，写了个writelist函数，目的是列出目录中的文件并按照文件下载时间顺序进行排序，也算是对数组的一次简单应用吧。
+
+
+## 最后总结
+
+
+php提供了很多相关的函数，一下子看不过来，还需在实践中慢慢体会。

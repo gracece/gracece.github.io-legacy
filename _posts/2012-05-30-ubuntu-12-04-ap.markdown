@@ -1,0 +1,20 @@
+---
+author: admin
+comments: true
+date: 2012-05-30 07:21:00+00:00
+layout: post
+slug: ubuntu-12-04-ap
+title: ubuntu 12.04 作无线热点发射wifi 相当简单！
+wordpress_id: 147
+categories:
+- linux
+tags:
+- ubuntu
+- 无线热点
+---
+
+今天试了下Ubuntu的无线热点功能，相当简单易用啊。比在windows7下简单多了，。
+
+具体如下：打开系统设置，网络设置：点用作热点即可，系统自动设定名称跟密码，当然，也可以自己设定。
+
+![](http://m2.img.libdd.com/farm4/23/D401D07EEFD3746165A6E78561F1CE17_400_202.jpg)
