@@ -3,7 +3,9 @@ layout: post
 title: "Goodbye Wordpress "
 description: "又是一番折腾，花了两天总算迁移到了github page 了！"
 category: 日志
-tags: [折腾,jekyll]
+tags: 
+- 折腾
+- jekyll
 ---
 {% include JB/setup %}
 
