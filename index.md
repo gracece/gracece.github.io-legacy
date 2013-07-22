@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Gracece's Blog
+title: 这个人写了一些很无聊的东西...
 ---
 
 {% include JB/setup %}
