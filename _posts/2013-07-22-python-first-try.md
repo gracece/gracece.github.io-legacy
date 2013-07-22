@@ -46,7 +46,6 @@ python脚本读取考生数据csv文件并暴力遍历出生年月，post到`htt
 要写`$`符号。
 
 ### 完整代码
-    
     #!/usr/bin/python
     # -*- coding:utf-8 -*-
 
@@ -64,39 +63,38 @@ python脚本读取考生数据csv文件并暴力遍历出生年月，post到`htt
         result =""
         for line in response:
             lnum += 1
-            if lnum == 81:
-                if(line.find('未能查到') != -1):
-                    return "\nnot found!"
+            if lnum == 80:
+                if(line.find('准考证号') == -1):
+                    return "fail"
             if(lnum >= 80) and (lnum <=83):
-                result +=line
-        return result
+                result += line
+        return result+"\n"
 
     def main():
         """main"""
         postUrl ="http://120.197.89.132:8800/myExamWeb/wap/school/gaokao/loveHS!dispatcher.action"
         mobileNo = "13800138000"
-        birthdayRange = ['9310','9311','9312','9401','9402','9403','9404','9405','9406',\
+        birthdayRange = ['9401','9402','9403','9404','9405','9406',\
                 '9407','9408','9409','9410','9411','9412','9501','9502','9503','9504','9505',\
-                '9506','9507','9508','9509','9510','9511','9512','9601','9602','9603'] 
-        reader = csv.reader(open("Book1.csv"))
+                '9506','9507','9508','9509','9510','9511','9512','9304','9305','9306','9307','9308','9309','9310','9311','9312','9601','9602','9603','9604','9605','9606','9303','9302','9301'] 
+        reader = csv.reader(open("all.csv"))
         for examReferenceNo,userName in reader:
             print examReferenceNo
-            print userName
-            open("result.txt",'a+').write("\n"+examReferenceNo+userName+"\n")
-            for i in range(len(birthdayRange)):
-                print birthdayRange[i]
-                birthday = birthdayRange[i]
+            open("result.txt",'a+').write("\n"+examReferenceNo+","+userName+"\n")
+            for i in birthdayRange:
+                print i
+                birthday = i
                 data = {'id':'14356B43-7F8B-4B00-BB13-F95841F33C46','userName':userName,'examReferenceNo':examReferenceNo,\
                         'birthday':birthday,'mobileNo':mobileNo}
                 response = post(postUrl,data)
                 print response
-                open("result.txt",'a+').write(response)
-                open("result.txt",'a+').write('<p>' + birthday + '</p>\n')
+                if response.find('fail') == -1:
+                    open("result.txt",'a+').write(response)
+                    break
 
-        
     if __name__ == '__main__':
         main()
-
+        
 ### 不足
 
  * 太过暴力，没有对频率进行控制。其实脚本抓取，还是得讲究个度的
