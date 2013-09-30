@@ -1,11 +1,10 @@
 ---
 layout: post
 title: "RG100A-AA 中大校园网快速上网配置"
-description: "nothing"
-category:linux 
+description: "本文非技术探讨，关于技术细节的探讨可移步[zhyaof](http://talk.withme.me/?p=30)。  "
+category: linux
 tags: 
 - openwrt
-- njit
 
 ---
 {% include JB/setup %}
