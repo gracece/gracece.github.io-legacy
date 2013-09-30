@@ -47,6 +47,7 @@ DB-120可以使用OH3C，请查看[南浦月博文](http://blog.nanpuyue.com/201
 		option 'ifname' 'eth1.1'
 		option 'proto' 'dhcp' 
 
+复制上面的文本（[Raw](https://gist.github.com/gracece/1b068090411fd4d9b4e6/raw/12571386d2ca99bde898f53f2073d4e98b5dc05d/openwrt+network++config) )，并覆盖到 `/etc/config/network` ，重启网络服务，可能会断开ssh连接。
 
 ### 安装libpcap
 
