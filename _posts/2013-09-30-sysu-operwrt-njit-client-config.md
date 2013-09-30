@@ -1,10 +1,7 @@
 ---
 layout: post
 title: "RG100A-AA 中大校园网快速上网配置"
-description: "本文非技术探讨，关于技术细节的探讨可移步[zhyaof](http://talk.withme.me/?p=30)。
-本文假设你已经通过淘宝或其它途径获得一部已经刷好 Openwrt 的上海贝尔 RG100A-AA，下面的简单步骤能让你快速连接上校园网。
-以下配置在S6测试通过。其他型号的解决方案可能需要使用不同的解决方法，如
-DB-120可以使用OH3C，请查看[南浦月博文](http://blog.nanpuyue.com/2012/003.html)。"
+description: "nothing"
 category:linux 
 tags: 
 - openwrt
