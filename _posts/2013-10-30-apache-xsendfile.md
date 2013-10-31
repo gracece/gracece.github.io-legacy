@@ -23,7 +23,7 @@ header ('Location: xxx') 跳转到文件真实地址。
 想要解决上述问题，有两种想法，一是把资源所在文件夹放在http不可访问的地方，然后在download.php内使用readfile()之类的方法来读取，但是处理大文件的时候怕内存吃不消。
 二是用.htaccess 限制referer，但是这个用起来更加不灵活，因为无法在服务器端设置referer(要不然用cURL？），且referer也能轻易被伪造。
 
-以上是我在[V2Ex](http://v2ex.com/t/87554#reply1)的提问内容，只有一个人回复，回复只有一个单词`xsendfile`,但是有谷歌，这一个单词就够了！
+以上是我在[V2EX](http://v2ex.com/t/87554#reply1)的提问内容，只有一个人回复，回复只有一个单词`xsendfile`,但是有谷歌，这一个单词就够了！
 
 #### 什么是X-Sendfile
 
@@ -35,12 +35,12 @@ X-Sendfile是一种机制，它让后台代码从耗费内存的文件读写中�
 Linux+Apache2 的环境下，还需要配置一个模块 `mod_xsendfile`才可使用。[tn123](https://tn123.org/mod_xsendfile/)
 这里有非常详细的说明，下面简要说说配置步骤。
 
-- 安装模块
++ 安装模块
 
 	下载源代码，使用apache2提供的工具进行编译安装，`apxs -cia mod_xsendfile.c`，可能提示无法找到`apxs`，则先安装
 	`apache2-prefork-dev`，重启apache2即可。
 
-- 配置apache2
++ 配置apache2
 
 	上面步骤之后，模块应该是已经启用了的，可以用 `a2enmod xsendfile` 检查下是否启动。然后在配置文件中加入一句话`XSendFile on`,这里的配置文件可以是服务器的配置文件apache2.conf，也可以是虚拟主机的配置文件，或.htaccess文件，甚至可以指定到某一个文件才可启用这个功能。再配置虚拟主机，使得资源所在的文件夹不能直接通过url访问，
 	从而达到控制权限且有效记录下载次数的目的。
@@ -51,7 +51,7 @@ Linux+Apache2 的环境下，还需要配置一个模块 `mod_xsendfile`才可�
 	         Order allow,deny
 	     </Directory>
 
-- 编写代码
++ 编写代码
 	
 	参考tn123中的示例代码，加入自己所需要的功能即可。
 
