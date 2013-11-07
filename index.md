@@ -26,7 +26,7 @@ title: Gracece's Blog
 				<div class="abstract">{{ post.description | markdownify }}</div>
 				<div style="float:right;"><a href="{{ BASE_PATH }}{{ post.url }}">阅读全文</a></div>
 			</div>
-			{% if forloop.index != 5 %}
+			{% if forloop.index != 9 %}
 			<div class="post-footer">&nbsp;</div>
 			{% endif %}
 		</div>
