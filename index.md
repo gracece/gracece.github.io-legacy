@@ -51,6 +51,17 @@ title: Gracece's Blog
 			{% include JB/tags_list %}
 			</ul>
 		</div>
+        <div class="sidebar-title">友情链接</div>
+		<div>
+			<ul class="tag_box inline">
+            <li> <a href="http://gavinblog.net">Gavin</a> </li>
+            <li> <a href="http://www.cnblogs.com/chenbjin/">bbking</a> </li>
+			</ul>
+		</div>
+
+
+
+
 	</div>
 </td>
 </tr>
