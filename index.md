@@ -51,6 +51,7 @@ title: Gracece's Blog
 			{% include JB/tags_list %}
 			</ul>
 		</div>
+        <br>
         <div class="sidebar-title">友情链接</div>
 		<div>
 			<ul class="tag_box inline">
