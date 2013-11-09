@@ -18,3 +18,29 @@ tags:
 具体如下：打开系统设置，网络设置：点用作热点即可，系统自动设定名称跟密码，当然，也可以自己设定。
 
 ![](http://m2.img.libdd.com/farm4/23/D401D07EEFD3746165A6E78561F1CE17_400_202.jpg)
+
+#### update 2013-11-09
+上面写的内容可能，我当时写的时候是可以用的，但是后面随着系统升级估计有一些变化，我再测试了一下，发现依旧是很简单的。
+
+系统环境为 Ubuntu 13.10 + KDE ,桌面发行版不同带来的显示界面不同，但应该不会影响具体的设置吧。
+
+![pic1](http://ww4.sinaimg.cn/large/50b560a5gw1eaf0ufi5tij208z09z74m.jpg)
+
+点击`编辑连接`进入编辑界面:
+
+![pic2](http://ww3.sinaimg.cn/large/50b560a5gw1eaf0vr6fc2j20c60gfdhf.jpg)
+选择ADD,Wireless(shared)
+
+![pic3](http://ww4.sinaimg.cn/large/50b560a5gw1eaf0wxwmg1j20dk0cswfm.jpg)
+按照图片设置即可，如果对安全性有要求，则在Wireless Security下进行设置即可。
+
+![pic4](http://ww4.sinaimg.cn/large/50b560a5gw1eaf0yrak3bj209108ygm0.jpg)
+设置完之后即可进行连接，系统可能自动连接上了，连接之后不会显示其他无线网络，因为无线网卡已经被占用发WIFI了。
+
+然后掏出手机进行连接即可。
+
+![pic5](http://ww4.sinaimg.cn/large/50b560a5gw1eaf11fxf2uj20k00zk0ut.jpg)
+
+有问题可留言交流。
+
+
