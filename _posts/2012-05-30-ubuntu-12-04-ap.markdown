@@ -29,12 +29,15 @@ tags:
 点击`编辑连接`进入编辑界面:
 
 ![pic2](http://ww3.sinaimg.cn/large/50b560a5gw1eaf0vr6fc2j20c60gfdhf.jpg)
+
 选择ADD,Wireless(shared)
 
 ![pic3](http://ww4.sinaimg.cn/large/50b560a5gw1eaf0wxwmg1j20dk0cswfm.jpg)
+
 按照图片设置即可，如果对安全性有要求，则在Wireless Security下进行设置即可。
 
 ![pic4](http://ww4.sinaimg.cn/large/50b560a5gw1eaf0yrak3bj209108ygm0.jpg)
+
 设置完之后即可进行连接，系统可能自动连接上了，连接之后不会显示其他无线网络，因为无线网卡已经被占用发WIFI了。
 
 然后掏出手机进行连接即可。
