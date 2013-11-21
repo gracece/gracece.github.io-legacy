@@ -31,7 +31,7 @@ Git可以使用四种主要的协议来传输数据：本地传输，SSH协议�
 
 		git clone --bare project project.git
 
-	这里如果你没有一个现存的仓库，即是从零开始的，那就需要先`git init`一个空项目然后进行clone。
+	这里如果你没有一个现存的仓库，即是从零开始的，那就需要先`git init --bare `一个空项目。
 
 - 收集并添加协作者的SSH公钥到git用户
 
