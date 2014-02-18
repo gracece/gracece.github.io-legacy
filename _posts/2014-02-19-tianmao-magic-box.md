@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "天猫魔盒上手体验"
-description: "这是一只住在客厅里的猫～"
-category:生活
+description: "这是一只住在客厅的猫～"
+category: 生活
 tags:
 - life
+
 ---
+
 {% include JB/setup %}
 
 假期游手好闲，整日不思进取，收了红包手里有两闲钱，再加上父亲大人顶住母亲大人的压力，购置了50寸等离子电视，看着那
