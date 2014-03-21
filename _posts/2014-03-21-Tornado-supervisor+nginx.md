@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Tornado + Supervisord + Nginx 配置"
-description: ""
-category:linux
+description: "简要记录如何在centos6上配置Nginx反向代理Tornado程序，同时使用supervisor配合守护进程。"
+category: linux
 tags:
 - tornado
 - nginx
