@@ -9,8 +9,9 @@ tags:
 - supervisor
 ---
 {% include JB/setup %}
-Tornado + Supervisord + Nginx
-===============
+
+在项目中用到了tornado来写一个简单web程序，同时为了更加方便地管理，使用supervisor来守护管理tornado进程。
+另外使用nginx作为tornado多进程多端口的反向代理，同时可以达到均衡负载的作用。下面简要记录配置过程。
 
 ### Tornado
 参考此文件，使用Tornado提供的options，可以解析命参数，到时候在后面加 --port=8001 就能
