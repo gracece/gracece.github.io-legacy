@@ -8,7 +8,7 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
@@ -16,35 +16,109 @@
     <link href="{{ ASSET_PATH }}/css/style.css?body=20131124" rel="stylesheet" type="text/css" media="all">
 
     <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
+    <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
+    -->
+    <style type="text/css" media="all">
+      pre{
+        font-weight:500;
+      }
+      #myheader
+      {
+        width: 100%;
+        background:rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        margin-bottom: 0;
+      }
+      #header-inner h1 a:hover
+      {
+        color:#CCC;
+      }
+
+      #myheader a
+      {
+        color:#FFF;
+      }
+      #myheader a:hover
+      {
+        color:#000;
+      }
+
+      #header-inner
+      {
+        width:840px;
+        margin:0 auto auto;
+      }
+
+      #header-inner h1
+      {
+        font-size: 26px;
+        float: left;
+        margin:0px;
+      }
+
+      #header-inner h1 a
+      {
+        font-weight:700;
+      }
+
+      #header-inner ul
+      {
+        float: right;
+        margin-bottom: 0;
+        font-size: 12px;
+        list-style: none;
+        margin-top:0px
+      }
+      #header-inner ul li
+      {
+        float:left;
+      }
+
+      #header-inner ul li a
+      {
+        margin: 5px 0 0 10px;
+        line-height: 15px;
+        display: block;
+        padding: 10px 10px;
+        font-size: 15px;
+      }
+    </style>
   </head>
 
   <body>
 
 
+    <div id="myheader">
+      <div id="header-inner">
+        <h1> <a href="{{ HOME_PATH }}">{{ site.title }}</a> </h1>
+
+        <ul class="nav">
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+        </ul>
 
 
-<div class="navbar navbar-inverse" style="margin-bottom:0px">
-      <div class="navbar-inner">
-        <div class="container" style="width:960px">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-             
-        </div>
-        
       </div>
+
     </div>
 
-    <div class="container">
+
+
+
+
+    <div class="container" style="margin-top:40px;width:840px;">
 
       <div class="content">
         {{ content }}
@@ -55,7 +129,7 @@
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
-        
+
       </footer>
 
     </div> <!-- /container -->
@@ -71,6 +145,6 @@
 
     <!--
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/run_prettify.js"></script>
-       -->
+    -->
   </body>
 </html>
