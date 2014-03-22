@@ -188,3 +188,35 @@ tags:
 - [keakon](http://www.keakon.net/2012/12/17/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E9%87%8D%E5%90%AFTornado)
 - [pythoner](http://demo.pythoner.com/itt2zh/ch8.html)
 - [au92](http://www.au92.com/archives/tornado-get-remote-ip-address-complement.html)
+
+
+### 2014-03-22补充一键脚本
+
+    #/bin/bash
+    # 2014-03-22
+    yum install python-pip
+    yum install python-devel
+    yum install nginx
+    pip install tornado
+    pip install supervisor
+
+    wget -O /var/www/index.py https://gist.githubusercontent.com/gracece/21e5719b234929799eeb/raw/index.py
+    wget -O /etc/supervisord.conf https://gist.githubusercontent.com/gracece/21e5719b234929799eeb/raw/supervisord.conf
+    wget -O /etc/nginx/conf.d/tornado.conf https://gist.githubusercontent.com/gracece/21e5719b234929799eeb/raw/tornado.conf 
+
+    supervisord
+    /etc/init.d/nginx restart
+    supervisorctl reload all
+    supervisorctl status
+
+    iptables -A INPUT -i lo -j ACCEPT
+    iptables -A INPUT -p tcp  --dport 8001:8004 -j REJECT
+    /etc/init.d/iptables save
+
+    wget -O /etc/rc.d/init.d/supervisord https://gist.githubusercontent.com/gracece/21e5719b234929799eeb/raw/supervisord
+    chmod +x /etc/rc.d/init.d/supervisord
+    chkconfig --add supervisord
+    ntsysv
+
+以上为粗放型安装Tornado+supervisor+nginx 脚本，适用于centos6,其他系统可能无法正常运行，默认端口为8888,nginx反向代理8001-8004 四个进程，
+默认py文件为/var/www/index.py ，如果需要更改，请修改/etc/supervisord.conf 里对应文件夹即可， 然后运行 supervisorctl reload all 重启进程。
