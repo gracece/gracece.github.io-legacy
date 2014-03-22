@@ -33,8 +33,7 @@ tags:
     if __name__ == "__main__":
         tornado.options.parse_command_line()
         app = tornado.web.Application(handlers=[(r"/", IndexHandler)])
-        #添加xheaders=True才能获得预期的ip
-        http_server = tornado.httpserver.HTTPServer(app，xheaders=True) 
+        http_server = tornado.httpserver.HTTPServer(app,xheaders=True) 
         http_server.listen(options.port)
         tornado.ioloop.IOLoop.instance().start()
         
