@@ -1,5 +1,6 @@
 ---
 layout: page
+title: gracece's blog
 ---
 
 {% include JB/setup %}
