@@ -223,3 +223,74 @@ ol.linenums li {
   line-height: 20px;
   text-shadow: 0 1px 0 #fff;
 }
+      pre{
+        font-weight:500;
+      }
+      #myheader
+      {
+        width: 100%;
+        background:rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        margin-bottom: 0;
+      }
+      #header-inner h1 a:hover
+      {
+        color:#CCC;
+      }
+
+      #myheader a
+      {
+        color:#FFF;
+      }
+      #myheader a:hover
+      {
+        color:#000;
+      }
+
+      #header-inner
+      {
+        width:840px;
+        margin:0 auto auto;
+      }
+
+      #header-inner h1
+      {
+        font-size: 26px;
+        float: left;
+        margin:0px;
+      }
+
+      #header-inner h1 a
+      {
+        font-weight:700;
+      }
+
+      #header-inner ul
+      {
+        float: right;
+        margin-bottom: 0;
+        font-size: 12px;
+        list-style: none;
+        margin-top:0px
+      }
+      #header-inner ul li
+      {
+        float:left;
+      }
+
+      #header-inner ul li a
+      {
+        margin: 5px 0 0 10px;
+        line-height: 15px;
+        display: block;
+        padding: 10px 10px;
+        font-size: 15px;
+      }
+
