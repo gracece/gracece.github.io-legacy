@@ -56,7 +56,7 @@ layout: page
 			<ul class="tag_box inline">
             <li> <a href="http://gavinblog.net">Gavin</a> </li>
             <li> <a href="http://www.cnblogs.com/chenbjin/">bbking</a> </li>
-            <li> <a href="http://blog.csdn.net/hhysirius"></a>湛江下暴雨 </li>
+            <li> <a href="http://blog.csdn.net/hhysirius">湛江下暴雨 </a></li>
 
 
 			</ul>
