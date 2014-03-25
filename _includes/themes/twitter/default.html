@@ -14,11 +14,27 @@
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=2014-03-24" rel="stylesheet" type="text/css" media="all">
+    <style>
+      #backimg{
+        z-index:-1;
+        position:fixed;
+        top:0;
+        left:0;
+        min-height:100%;
+        min-width:100%;
+      }
+
+      body{
+        background:none;
+      }
+
+    </style>
 
   </head>
 
   <body>
 
+    <img id="backimg" src="http://grace.qiniudn.com/img/back1.jpg" alt="back">
 
     <div id="myheader">
       <div id="header-inner">
