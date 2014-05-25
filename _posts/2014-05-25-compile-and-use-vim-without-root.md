@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "compile and use vim without root"
-description: ""
+title: "无root权限编译配置使用vim74"
+description: "为了愉快地写代码，折腾编译一下vim找回熟悉的配置还是相当值得的。"
 category: linux
 tags: 
 - vim
