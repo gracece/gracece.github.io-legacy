@@ -292,6 +292,7 @@ ol.linenums li {
         line-height: 15px;
         display: block;
         padding: 10px 10px;
-        font-size: 15px;
+        font-size: 18px;
+        font-family: 'Playball', cursive;
       }
 
