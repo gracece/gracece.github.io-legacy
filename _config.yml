@@ -13,7 +13,7 @@ pygments: true
 title : Gracece's Blog
 tagline: Site Tagline
 author :
-  name : Guo Lingyuan  
+  name : Guo Lingyuan
   email : guolyuan@gmail.com
   github : gracece
   twitter : username
@@ -27,7 +27,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://gracece.net
+production_url : http://gracece.com
 safe : false
 cdn_url : http://grace.qiniudn.com
 markdown : rdiscount
