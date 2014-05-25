@@ -19,7 +19,7 @@ tags:
 - 系统环境为suse10,gcc版本4.2，无root权限，无外网，所以只能曲线救国编译到自己的家目录下。
 - 下载[vim 7.4源码](ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2),解压备用。
 
-## 编译及安装
+### 编译及安装
 在`vim74/src/INSTALL`有这么一段话:
 >Unix: PUTTING vimrc IN /etc
 >
@@ -48,7 +48,7 @@ configure的更多选项，可以通过执行`./configure --help`查看，写得
 内存的，可以加 -j 选项，这样编译更快。编译完成，即可在刚刚指定的prefix目录下找到vim的二进制文件，执行就可以看到熟悉的
 vim7.4啦。
 
-## 配置及使用
+### 配置及使用
 编译好vim之后，可以通过alias的方式启动，也可以将自己放二进制的目录export到PATH。 在vim的help文件中，可以看到vim载入文件配置的详细说明，最关键的：
 
     'runtimepath' 'rtp'	string	(default:
@@ -78,7 +78,7 @@ vim7.4啦。
 确保rtp的vundle正确，同时在vundle的初始化函数中声明插件所在的目录，具体参考[stackoverflow](http://stackoverflow.com/questions/9809209/how-to-make-vim-vundle-install-plugin-to-another-path)。
 话说在没有网络的情况下，vundle都没有任何用武之地了，最终的结果是直接把自己电脑上原来的.vim文件夹搬过来，简单粗暴。
 
-## 结束
+### 结束
 至此，熟悉的vim环境就搞定了，又可以愉快地写代码了。
 
 
