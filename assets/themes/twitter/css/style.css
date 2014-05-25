@@ -1,6 +1,6 @@
 /* Override some defaults */
 html, body {
-  background-color: #eee;
+  background-color: #D9E8EB;;
   font-family: Microsoft Yahei;
 }
 .container > footer p {
@@ -8,7 +8,6 @@ html, body {
 }
 .container {
   width: 940px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
-  box-shadow: rgb(136, 136, 136) 0px 0px 25px;
 }
 
 /* The white background content wrapper */
@@ -19,9 +18,9 @@ html, body {
   -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-          box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -webkit-box-shadow: 0 0px 22px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 0px 22px rgba(0,0,0,.15);
+          box-shadow: 0 0px 22px rgba(0,0,0,.15);
 }
 
 /* Page header tweaks */
