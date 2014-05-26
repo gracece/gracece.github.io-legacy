@@ -12,7 +12,7 @@ tags:
 ### 需求
 实习的时候，发现公司的服务器上用的vim版本是6.4(ORZ 好像我开始接触的linux的时候就已经是7.3了)，查了下wiki，这版本是2005年，那时
 我估计刚上初中。版本低，最大的问题就是各种插件都用不了，像我这等插件党，没有了那一套风骚的插件配置自动补全，感觉都不能愉快地打代码了。
-我的岗位是业务运维，长时间写代码的时候不多，更多是用前人写好的工具做事，所以配个熟悉的vivdchalk,加上简单的vimrc还是可以用的。
+我的岗位是业务运维，长时间写代码的时候不多，更多是用前人写好的工具做事，所以配个熟悉的vividchalk,加上简单的vimrc还是可以用的。
 但是未曾想分配给我运营开发的活，需要用python开发web应用。无插件写了一会，感觉还是得搞起。
 
 ### 准备
@@ -30,7 +30,7 @@ tags:
 >        make VIMRCLOC=/etc VIMRUNTIMEDIR=/usr/share/vim MAKE="make -e"
 >
 
-所以就这么简单，只需要声明prefix即可。具体来说就是将prefeix指定到自己有权限的目录：
+所以就这么简单，只需要声明prefix即可。具体来说就是将prefex指定到自己有权限的目录：
 
     ./configure --prefix=/home/grace/usr --with-features=huge --enable-multibyte 
 
