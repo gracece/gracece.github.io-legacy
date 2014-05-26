@@ -242,14 +242,16 @@ ol.linenums li {
       }
       #header-inner h1 a:hover
       {
-        color:#CCC;
         text-decoration: none;
+        text-shadow: 0px 0px 5px #FFFFFF;
+        transition: text-shadow 1s;
       }
 
       #myheader a
       {
         color:#FFF;
         transition: color 1s;
+        transition: text-shadow 1s;
       }
       #myheader li a:hover
       {
