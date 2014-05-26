@@ -16,16 +16,11 @@
     <link href="/assets/themes/twitter/css/style.css?" rel="stylesheet" type="text/css" media="all">
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <style>
-      #backimg{
-        z-index:-1;
-        position:fixed;
-        top:0;
-        left:0;
-        min-height:100%;
-        min-width:100%;
-      }
-      body{
-        background:none;
+      @font-face {
+        font-family: 'Playball';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Playball'), local('Playball-Regular'), url( http://grace.qiniudn.com/playball.woff) format('woff');
       }
       div#header-inner h1 a {
         font-family: 'Playball', cursive;
@@ -36,10 +31,6 @@
   </head>
 
   <body>
-
-    <!--
-    <img id="backimg" src="http://grace.qiniudn.com/img/back1.jpg" alt="back">
-    -->
 
     <div id="myheader">
       <div id="header-inner">
