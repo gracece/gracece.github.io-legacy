@@ -1,7 +1,11 @@
 /* Override some defaults */
 html, body {
-  background-color: #D9E8EB;;
   font-family: Microsoft Yahei;
+}
+
+body{
+  background-image: url(http://grace.qiniudn.com/5.jpg);
+  background-attachment: fixed;
 }
 .container > footer p {
   text-align: center; /* center align it with the container */
@@ -20,7 +24,7 @@ html, body {
           border-radius: 0 0 6px 6px;
   -webkit-box-shadow: 0 0px 22px rgba(0,0,0,.15);
      -moz-box-shadow: 0 0px 22px rgba(0,0,0,.15);
-          box-shadow: 0 0px 22px rgba(0,0,0,.15);
+          box-shadow: 0 0px 22px rgba(43, 32, 51, 0.47);
 }
 
 /* Page header tweaks */
@@ -229,7 +233,7 @@ ol.linenums li {
       #myheader
       {
         width: 100%;
-        background:rgba(0, 0, 0, 0.7);
+        background: rgba(7, 7, 14, 0.39);
         -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
         -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
         box-shadow: 0 1px 3px rgba(0,0,0,0.25);
